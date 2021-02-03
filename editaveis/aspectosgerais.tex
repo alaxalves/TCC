@@ -1,175 +1,1032 @@
-\part{Aspectos Gerais}
+% \part{General Aspects}
 
-\chapter[Aspectos Gerais]{Aspectos Gerais}
+\chapter[General Aspects]{General Aspects}
 
-Estas instruções apresentam um conjunto mínimo de exigências necessárias a 
-uniformidade de apresentação do relatório de Trabalho de Conclusão de Curso 
-da FGA. Estilo, concisão e clareza ficam inteiramente sob a 
-responsabilidade do(s) aluno(s) autor(es) do relatório.
+\section{Related works}
 
-As disciplinas de Trabalho de Conclusão de Curso (TCC) 01 e Trabalho de 
-Conclusão de Curso (TCC) 02 se desenvolvem de acordo com Regulamento 
-próprio aprovado pelo Colegiado da FGA. Os alunos matriculados nessas 
-disciplinas devem estar plenamente cientes de tal Regulamento. 
+Although there have been several discussions on DevOps practices and how they
+benefit one's project, applying such practices to an existing project is often
+painful. 
 
-\section{Composição e estrutura do trabalho}
+When it comes to refactoring legacy code with focus on DevOps, S.A.M. Rizvi and
+Zeba Khanam have proposed methodology \cite{zeba2011}. Their article proposes a
+methodology that can be employed to apply the refactoring activities on the
+legacy system, employing the aspect-oriented techniques. Considering the
+refactoring activities that are more likely to improve the software design and
+quality, the developers should adopt an approach that would focus on a
+restricted set of refactoring patterns. Thus allowing the developers to choose
+their desired set of strategies \cite{zeba2011}.
 
-A formatação do trabalho como um todo considera três elementos principais: 
-(1) pré-textuais, (2) textuais e (3) pós-textuais. Cada um destes, pode se 
-subdividir em outros elementos formando a estrutura global do trabalho, 
-conforme abaixo (as entradas itálico são \textit{opcionais}; em itálico e
-negrito são \textbf{\textit{essenciais}}):
+Gangadhar Hari Rao proposes a roadmap for implementing DevOps in a legacy
+software, with focus on building a CD pipeline with the supporting capabilities.
+With this roadmap Rao concludes that  the successful adoption of the DevOps
+methodology for a legacy system is possible only if the teams working on legacy
+systems also change their processes and mindset towards Agile and CD. In each
+stage of the roadmap he considers the challenges and proposes actions to
+overcome them, always with a great focus on CD - what could involve great costs,
+depending on the legacy system to be considered \cite{infosys2018}.
 
-\begin{description}
-	\item [Pré-textuais] \
+Chia-Chu Chiang and Coskun Bayrak propose a refactoring strategy that consists
+of converting legacy systems into component-based systems. The process involves
+program understanding, business rules extraction, and software transformation.
+In their paper, they present a semi-automated program slicing technique for
+business rules extraction from legacy code and convert the reusable code into a
+component conforming to the protocols of a component interconnection model
+\cite{bayrak2006}.
 
-	\begin{itemize}
-		\item Capa
-		\item Folha de rosto
-		\item \textit{Dedicatória}
-		\item \textit{Agradecimentos}
-		\item \textit{Epígrafe}
-		\item Resumo
-		\item Abstract
-		\item Lista de figuras
-		\item Lista de tabelas
-		\item Lista de símbolos e
-		\item Sumário
-	\end{itemize}
+Errickson-Connor \cite{errickson2003} also proposed a strategy that consisted of
+steps of a software modernization process where a legacy code is transformed
+into new languages and new environments. She suggests that a legacy code needs
+to be cleaned up, such as removing program anomalies before being transformed.
+The next stage involves software restructuring tasks such as isolating business
+rules, identifying business rules, and extracting business rules as reusable
+services. When the code corresponding to a business rule is extracted, it is
+ready for transformation into components in stage three. The final stage is to
+manage these reusable components in a software environment.
 
-	\item [Textuais] \
+Regarding implementing certain levels of DevOps in legacy software, the
+SmartSheet website ensures Virtualization and, consequently, Microservices as
+core practices. Working with small, reusable building blocks of code ensures
+that the application under development is not affected by the increase in
+deployments' velocity in the DevOps environment. Containers are the next
+evolutionary step in virtualization technology \cite{smartsheet2020}.
 
-	\begin{itemize}
-		\item \textbf{\textit{Introdução}}
-		\item \textbf{\textit{Desenvolvimento}}
-		\item \textbf{\textit{Conclusões}}
-	\end{itemize}
+Finally, Leonardo Leite, Carla Rocha, Fabio Kon, Dejan Milojicic, and Paulo
+Meirelles in their work A Survey of DevOps Concepts and Challenges outline a
+conceptual framework to guide engineers, managers, and academics in the
+exploration of DevOps tools, implications, and challenges. The conceptual
+framework is composed of conceptual maps, which are diagrams structured as
+graphs in which nodes depict concepts and arrows represent relationships among
+concepts\cite{rocha2019}.
 
-	\item [Pós-Textuais] \
-	
-	\begin{itemize}
-		\item Referências bibliográficas
-		\item \textit{Bibliografia}
-		\item Anexos
-		\item Contracapa
-	\end{itemize}
-\end{description}
+Their survey investigates the DevOps concepts and challenges from multiple
+perspectives: engineers, managers, and researchers. Also explores a much broader
+range of sources. More up-to-date concepts of DevOps and its tools are analyzed,
+categorized and correlates to the DevOps concepts, and discuss which roles in
+the organization should use which tools. It concludes by summarizing and
+discussing some of the main DevOps challenges \cite{rocha2019}.
 
-Os aspectos específicos da formatação de cada uma dessas três partes 
-principais do relatório são tratados nos capítulos e seções seguintes.
+\section{Background}
 
-No modelo \LaTeX, os arquivos correspondentes a estas estruturas que devem
-ser editados manualmente estão na pasta \textbf{editáveis}. Os arquivos
-da pasta \textbf{fixos} tratam os elementos que não necessitam de 
-edição direta, e devem ser deixados como estão na grande maioria dos casos.
+\subsection{DevOps - Practices and Strategies}
 
-\section{Considerações sobre formatação básica do relatório}
+\devops is a software development and delivery process that helps in emphasizing
+communication along with cross-functional collaboration between product
+management, software development, and operations professionals. Also widely
+considered a collaborative and multidisciplinary organizational effort to
+automate continuous delivery of new software updates while guaranteeing their
+correctness and reliability \cite{rocha2019}.
 
-A seguir são apresentadas as orientações básicas sobre a formatação do
-documento. O modelo \LaTeX\ \textbf{já configura todas estas opções corretamente},
-de modo que para os usuários deste modelo o texto de toda esta Seção é 
-\textbf{meramente informativo}.
+From the technical perspective, \devops relies heavily on automation tools,
+including tools for container management, continuous integration, orchestration,
+monitoring, deployment, and testing \cite{zhu2016}. Automated deployment
+pipelines and monitoring facilitate error detection. The micro-services
+architectural style is quickly becoming the standard for building continuously
+integrated and deployed systems. DevOps aims to achieve some business outcomes,
+such as reducing risk and cost, complying with regulations, and improving
+product quality and customer satisfaction \cite{rocha2019}.
 
-\subsection{Tipo de papel, fonte e margens}
+DevOps is an evolution of the agile movement, it proposes a complementary set of
+agile practices to enable the iterative delivery of software in short cycles
+effectively. Besides automating the delivery process, DevOps initiatives have
+also focused on using automated runtime monitoring for improving software
+runtime properties, such as performance, scalability, availability, and
+resilience \cite{rocha2019}.
 
-Papel -- Na confecção do relatório deverá ser empregado papel branco no 
-formato padrão A4 (21 cm x 29,7cm), com 75 a 90 g/m2.
+Using containers, one could run a single container to execute a small
+micro-service or software process to a more extensive application
+\cite{golden2019}. Containers and micro-services enable DevOps \cite{rocha2019}.
+Considering a hypothetical context, running a micro-service on bare metal is an
+attractive option, since multiple services on a single operating system instance
+can lead to conflicting library versions; one micro-service failure could affect
+others' behavior.
 
-Fonte -- Deve-se utilizar as fontes Arial ou Times New Roman no tamanho 12 
-pra corpo do texto, com variações para tamanho 10 permitidas para a 
-wpaginação, legendas e notas de rodapé. Em citações diretas de mais de três 
-linhas utilizar a fonte tamanho 10, sem itálicos, negritos ou aspas. Os 
-tipos itálicos são usados para nomes científicos e expressões estrangeiras, 
-exceto expressões latinas.
+Regarding DevOps practices, Continuous Testing (CT) highlights as the most
+fitting concept with two of the core aspects of DevOps, continuity of the
+process of development and a source of uninterrupted feedback - despite being a
+relatively new concept in Software Engineering. The practice of Continuous
+Testing pivots around test automation as well as early and frequent testing.
+Continuous Testing is a crucial component of the software development cycle that
+includes continuous development, integration, and deployment. 
 
-Margens -- As margens delimitando a região na qual todo o texto deverá estar 
-contido serão as seguintes: 
+Whereas some authors say microservices facilitate effective implementation of
+DevOps, others say microservices require DevOps, since deployment automation
+minimizes the overhead to manage a significant number of microservices. However,
+adopting microservices comes with several challenges. First, there is
+heterogeneity in non-functional patterns such as “startup scripts, configuration
+files, administration endpoints, and logging locations”. Technological
+heterogeneity can be a productivity barrier for newcomers in the team. Second,
+microservices must be deployed to production with the same set of versions used
+for integration tests \cite{rocha2019}.
 
-\begin{itemize}
-	\item Esquerda: 03 cm;
-	\item Direita	: 02 cm;
-	\item Superior: 03 cm;
-	\item Inferior: 02 cm. 
-\end{itemize}
+\subsection{Legacy Software and its challenges}
 
-\subsection{Numeração de Páginas}
+Legacy software is commonly defined as an application that is no longer updated
+or supported by the developer. Likewise, the software can become legacy if the
+developer's operation ceases or bought by another entity that decides to throw
+it out \cite{chima2016}. The definition is not limited to that, Legacy software
+systems are also considered programs that are still well used by the community
+or have some potential inherent value but were developed years, days, or even
+hours ago \cite{worth2003}. A software becomes legacy when its dependencies are
+not keeping up with the latest updates. That could represent software developed
+a few days ago, which has a vast and active maintainer community. 
 
-A contagem sequencial para a numeração de páginas começa a partir da 
-primeira folha do trabalho que é a Folha de Rosto, contudo a numeração em 
-si só deve ser iniciada a partir da primeira folha dos elementos textuais. 
-Assim, as páginas dos elementos pré-textuais contam, mas não são numeradas 
-e os números de página aparecem a partir da primeira folha dos elementos 
-textuais, que se iniciam na Introdução. 
+According to Sommerville \cite{sommerville2015}, Legacy systems can be rawly
+defined as old software systems that are used by an organization and usually
+rely on obsolete technology but are still essential to the business. This
+definition is totally correct, but coming to a wider definition legacy software
+also represents a software created one day ago. That is justified given the
+rapid advances and the increased reliance on software-related technologies
+\cite{cascio2016}. 
 
-Os números devem estar em algarismos arábicos (fonte Times ou Arial 10) no 
-canto superior direito da folha, a 02 cm da borda superior, sem traços, 
-pontos ou parênteses. 
+Often legacy codes have been maintained and developed by hundreds of
+programmers. While many changes have been made to it, the supporting
+documentation may not be current, and the programming style does not follow
+current standards \cite{worth2003}. The challenges could get more prominent, as
+such software might offer a volatile development environment - which makes
+contributing at any level very hard. Those challenges could be not have a
+representative test coverage or an arduous setup of the work environment.
 
-A paginação de Apêndices e Anexos deve ser contínua, dando seguimento ao 
-texto principal.
+A very proper example of legacy software is the web-based social platform
+Noosfero \cite{noosfero}. Basically Noosfero is an open source framework for
+social networking. Considering that its first versions are dated back to 2007 it
+has several legacy practices and code.
 
-\subsection{Espaços e alinhamento}
+Including \devops into a large-scale legacy system day-to-day is a challenging
+exercise since they often predate \devops or may have been developed without
+taking into account the unique characteristics of its practices.
 
-Para a monografia de TCC 01 e 02 o espaço entrelinhas do corpo do texto 
-deve ser de 1,5 cm, exceto RESUMO, CITAÇÔES de mais de três linhas, NOTAS 
-de rodapé, LEGENDAS e REFERÊNCIAS que devem possuir espaçamento simples. 
-Ainda, ao se iniciar a primeira linha de cada novo parágrafo se deve 
-tabular a distância de 1,25 cm da margem esquerda.
+DevOps principles, practices, and tools are changing the software industry.
+However, many industry practitioners, both engineers and managers, are still not
+aware of how their daily work can be affected by such principles, practices, and
+tools. As well, some legacy architectures might not be designed to run automated
+tests. Nonetheless, teams must be aware that cultural factors, such as managers
+who say “This is the way we have always done it”, can limit the adoption of
+continuous delivery more than technical factors. \cite{rocha2019}.
 
-Quanto aos títulos das seções primárias da monografia, estes devem começar 
-na parte superior da folha e separados do texto que o sucede, por um espaço 
-de 1,5 cm entrelinhas, assim como os títulos das seções secundárias, 
-terciárias. 
+Although companies recognize the importance of automated testing, they still
+struggle to implement it fully. Other factors that make automated testing
+complex are hardware availability for load testing and user experiment
+assessment. The benefits delivered by a deployment pipeline, that is continuous
+delivery,  are many. However, engineers must be aware that setting up the
+infrastructure for continuous deployment can demand a considerable effort.
+Breaking down the system into microservices also requires building multiple
+pipelines \cite{rocha2019}.
 
-A formatação de alinhamento deve ser justificado, de modo que o texto fique 
-alinhado uniformemente ao longo das margens esquerda e direita, exceto para 
-CITAÇÕES de mais de três linhas que devem ser alinhadas a 04 cm da margem 
-esquerda e REFERÊNCIAS que são alinhadas somente à margem esquerda do texto 
-diferenciando cada referência.
+There are still many open questions about how organizations should adopt DevOps.
+It is stated that DevOps adoption requires top-management support. Sometimes it
+does not happen in the first moment, and an anti-organizational strategy can
+take place. Moreover, arguments to encourage DevOps adoption can differ from
+engineers to managers - which is the organizational hierarchy structure of most
+legacy code teams \cite{rocha2019}.
 
-\subsection{Quebra de Capítulos e Aproveitamento de Páginas}
+\section{Strategies to Bring DevOps into Legacy Code}
 
-Cada seção ou capítulo deverá começar numa nova pagina (recomenda-se que 
-para texto muito longos o autor divida seu documento em mais de um arquivo 
-eletrônico). 
+Refactoring is the process of changing a software system so that it does not
+alter the code's external behavior yet improves its internal structure. It is a
+disciplined way to clean up code that minimizes the chances of introducing bugs.
+In essence, when one refactors actually is improving the design of the code
+after it has been written \cite{fowler2002}.
 
-Caso a última pagina de um capitulo tenha apenas um número reduzido de 
-linhas (digamos 2 ou 3), verificar a possibilidade de modificar o texto 
-(sem prejuízo do conteúdo e obedecendo as normas aqui colocadas) para 
-evitar a ocorrência de uma página pouco aproveitada.
+In the context of Legacy Code involves embracing several strategies and
+practices. Considering the challenges involved in refactoring legacy code,
+several organizations are not rushing to adopt such practices properly.
 
-Ainda com respeito ao preenchimento das páginas, este deve ser otimizado, 
-evitando-se espaços vazios desnecessários. 
+It is important to mention that the techniques, or strategies, described below
+in this work will not be considered refactoring strategies - analyzing through
+the spectrum of SOLID and Clean Code set of techniques. In this context,F the
+following strategies are considered to be strategies simply required to a legacy
+software team to adopt the DevOps culture.
 
-Caso as dimensões de uma figura ou tabela impeçam que a mesma seja 
-posicionada ao final de uma página, o deslocamento para a página seguinte 
-não deve acarretar um vazio na pagina anterior. Para evitar tal ocorrência, 
-deve-se reposicionar os blocos de texto para o preenchimento de vazios. 
+\subsection{Legacy in the box}
 
-Tabelas e figuras devem, sempre que possível, utilizar o espaço disponível 
-da página evitando-se a \lq\lq quebra\rq\rq\ da figura ou tabela. 
+Legacy code, especially massive monoliths, is one of the most unsatisfying,
+high-friction experiences for developers. Although there is always much caution
+involved in extending and maintaining legacy monoliths, such upgrades continue
+to prove to be very necessary, even though it takes a lot of work and money to
+keep maintaining such monolith.
 
-\section{Cópias}
+To help reduce the friction, developers have used virtualized machine images or
+container images with Docker containers to create immutable images of legacy
+systems and their configurations. This technique, called "legacy in the box",
+contain the legacy code in a box for developers to run locally and remove the
+need for rebuilding, re-configuring or sharing environments. In an ideal
+scenario, teams that own legacy systems generate the corresponding boxed legacy
+images through their build pipelines, and developers can then run and
+orchestrate these images in their allocated sandbox more reliably.
 
-Nas versões do relatório para revisão da Banca Examinadora em TCC1 e TCC2, 
-o aluno deve apresentar na Secretaria da FGA, uma cópia para cada membro da 
-Banca Examinadora.
+Adopting Legacy in the Box practice is not only about wrapping the legacy code
+in a container and ship it. It also features some other DevOps-related
+practices, such as adopting Continuous Integration and Continuous Deploy (CI/CD)
+into the project workflow - previously described.
 
-Após a aprovação em TCC2, o aluno deverá obrigatoriamente apresentar a 
-versão final de seu trabalho à Secretaria da FGA na seguinte forma:
+For instance, when it comes to adopting Continuous Integration into the Legacy
+project, a core practice consists of all developers committing to the mainline
+branch daily. When a team makes changes in smaller increments and integrates
+them into the mainline regularly. More minor changes, shipped to production
+quickly, are a lot easier to debug when something breaks. Rather than living in
+branches for long chunks of time, changes are continuously integrated
+\cite{meyer2014}.
 
-\begin{itemize}
-	\item 01 cópia encadernada para arquivo na FGA;
-	\item 01 cópia não encadernada (folhas avulsas) para arquivo na FGA;
-	\item 01 cópia em CD de todos os arquivos empregados no trabalho.
-\end{itemize}
+Beyond version control, a continuous integration server is one of the more
+essential tools a development team can put to fair use. A continuous integration
+server is unbiased. Its tasks boil down to telling the team whether the most
+recent changes still pass the stages it is configured to run \cite{meyer2014}.
 
-A cópia em CD deve conter, além do texto, todos os arquivos dos quais se 
-originaram os gráficos (excel, etc.) e figuras (jpg, bmp, gif, etc.) 
-contidos no trabalho. Caso o trabalho tenha gerado códigos fontes e 
-arquivos para aplicações especificas (programas em Fortran, C, Matlab, 
-etc.) estes deverão também ser gravados em CD. 
+The last step of a fully automated build is deploying to production, which
+requires an automated deployment process that every developer should be able to
+run, just like the continuous integration server. With an automated build in
+place, everyone can deploy to staging or production, anytime \cite{meyer2014}.
 
-O autor deverá certificar a não ocorrência de “vírus” no CD entregue a 
-secretaria. 
+\subsection{Testing, Integrating and Deploying Continuously}
 
+As previously said, CI/CD is a method to frequently deliver apps to customers by
+introducing automation into the stages of app development. Such practices
+introduce ongoing automation and continuous monitoring throughout the software
+life-cycle, from integration and testing phases to delivery and deployment.
+Taken together, these connected practices are often referred to as a CI/CD
+pipeline \cite{redhat}.
+
+When Continuous Testing is adequately implemented, an organization can get a
+constant insight into the robustness of the latest software build and ensure
+speedy delivery of high-quality software. CI/CD is a method to frequently
+deliver apps to customers by introducing automation into app development stages.
+Continuous Integration helps teams work more efficiently because the different
+components of a complex system will more assuredly work together. By having each
+piece of code verified by an automated build, a team is allowed to develop
+cohesive software more rapidly. Leading to significantly reduced integration
+problems and quick error detection. However, once this bottleneck is overcome,
+CD presents several benefits that directly influence the end product. Since CD -
+and CI - are all about automation, it allows teams to focus on the actual
+product and testing. Also, make it possible to integrate teams and processes
+with a unified pipeline, thus standardizing the entire project.
+
+Continuous practices are expected to provide several benefits such as: getting
+more and quick feedback from the software development process and customers;
+having frequent and reliable releases, which lead to improved customer
+satisfaction and product quality; through CD, the connection between development
+and operations teams is strengthened and manual tasks can be eliminated.
+
+In DevOps, CI/CD along with testing plays a vital role since it results in
+trustful services due to the use of agile development methods and concepts -
+also embraced by the DevOps practices. Continuous integration tools orchestrate
+several automated actions that, together, implement the deployment pipeline
+pattern. Among the stages orchestrated by the pipeline are: package generation,
+automated test execution for correctness verification, and deployment to both
+development and production environments \cite{rocha2019}.
+
+Continuous Delivery has been the approach to bring automation, quality, and
+discipline to create a reliable and repeatable process to release software into
+production. Pillars of \devops: automated stages, quality, repeatable process,
+automated test stages, and more \cite{fowler2019}.
+
+Continuous delivery and continuous deployment will be used as synonyms, also
+referred to as CD. CD usually means a developer's application changes are
+automatically bug tested and uploaded to a repository, where it can be later
+deployed to a live production environment. Another approach to defining CD is
+that it can refer to automatically releasing a developer's changes from the
+repository to production, where it is made available to customers. It addresses
+the problem of overloading operations teams with manual processes that slow down
+app delivery. CI/CD is really a process, often visualized as a pipeline, that
+involves adding a high degree of ongoing automation and continuous monitoring to
+app development \cite{redhat}. 
+
+\subsection{Architecture}
+
+A Software Architecture is concerned with both structure and behavior, is
+concerned with significant decisions only, may conform to an architectural
+style, is influenced by its stakeholders and its environment, and embodies
+decisions based on rationale. Some authors explore software design in the
+context of DevOps, continuous delivery, and continuous deployment. However,
+developers may still struggle with this in practice, since achieving the desired
+architecture can be infeasible in a single first DevOps \cite{rocha2019}.
+
+As well as defining structural elements, an architecture defines the
+interactions between these structural elements. And are these interactions that
+provide the desired system behavior \cite{eeles2006}.
+
+\subsubsection{Micro-services}
+
+When it comes to specifying among the various architectures, the micro-services
+architecture stands out to aid the DevOps implementation. As the size of a
+software systems increases, the computation algorithms and data structures no
+longer constitute the major design problems. When systems are constructed from
+many components, the overall system's organization – the software architecture –
+presents a new set of design problems \cite{show1993}.
+
+Micro-services is a style of architecture that emphasizes dividing the system
+into small and lightweight services that are purposely built to perform a very
+cohesive business function and is an evolution of the traditional
+service-oriented architecture style. This architecture is an approach to
+developing an application as a set of small independent services. Each of the
+services is running in its independent process \cite{namiot2014}. As the
+software grows, it can be a great approach to achieve scalability.
+
+\section{The case study}
+
+The previous section described several handy concepts that, when explored, could
+represent a great advantage when refactoring a legacy code. Such concepts obey a
+particular pattern when applied to the process of upgrading and also refactoring
+itself.
+
+In order to successfully achieve this work's goal, there should be defined as a
+well-structured process, specifically, agile developing methodologies.
+
+\subsection{Open Source Software (OSS)}
+
+Open source software is software with source code that anyone can inspect,
+modify and enhance \cite{oss2019}. Open source software can be defined as
+software distributed under a licensing agreement which allows the source code
+(computer code) to be shared, viewed, and modified by other users and
+organizations \cite{bansal2015}.
+
+Freedom with the source code allows developers to create unique solutions, which
+can then be built upon by other community members. This process of
+"crowdsourcing" allows for development shops to pull beyond their teams' talents
+and access a repository of information compiled by the community at large.
+
+Open source solutions geared toward the enterprise often have thriving
+communities around them, bound by a shared drive to support and improve a
+solution that both the enterprise and the community benefit from (and believe
+in). The global communities united around improving these solutions introduce
+new concepts and capabilities faster, better, and more effectively than internal
+teams working on proprietary solutions. Not to mention that this brings several
+benefits to the end-user as well.
+ 
+Furthermore, utilizing DevOps solutions in the context of an open-source
+community can be both time and cost-effective and also very practical to
+organizations in general. DevOps is a newer and less mature software practice.
+It requires a new tool, process, and solutions development; in other words, the
+developers will empirically implement the DevOps strategies according to its
+organizational needs. Leveraging open source solutions can expedite that
+process. Many of the key DevOps tools used today either are or started as
+open-source solutions for DevOps problems, which certainly fits an open-source
+software project's objectives. While DevOps and open source are two entirely
+separate things, though, the reality is that it’s difficult to separate the two
+at this point. Many open source projects rely on DevOps tools and principles,
+and DevOps depends heavily on open source applications as both the glue that
+binds it all together and the engine that keeps everything moving
+\cite{techspective2016}.
+
+Open-source software development, particularly its core tenets of collaboration
+and transparency, has always been an integral part of DevOps. This is one of the
+reasons that DevOps tends to be an easier adjustment for developers, who tend to
+have experience with open-source software and its concepts and technologies
+\cite{techbeacon2020}.
+
+With OSS, community members have open access to the source code and can use it
+in any way they see fit. Also, an open-source project can be altered and
+extended by any developer familiar with the source code. This grants
+organizations freedom and long-term viability because hundreds of developers
+supporting a widely adopted OSS project can be called upon long into the future.
+
+\subsection{Study Design}
+
+\vspace{5mm}
+
+\begin{table}[ht]
+\begin{adjustbox}{width={460px},totalheight={180px}}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Project}                   & \textbf{Mapknitter} & \textbf{Noosfero} &
+Spectral Workbench & Salicml         \\ \hline
+\textbf{Number of commits}         & 2,512 commits       & 16,785 commits    &
+1,271 commits      & 638 commits     \\ \hline
+\textbf{Contributors}              & 75 contributors     & 25 contributors   &
+18 contributors    & 14 contributors \\ \hline
+\textbf{Lines of source code}      & 60.863 lines        & 227.024 lines     &
+46.201 lines       & 85.804 lines    \\ \hline
+\textbf{Date of first commit}      & 26/04/2009          & 27/06/2007        &
+27/09/2010         & 27/03/2018      \\ \hline
+\textbf{License}                   & GPL v3              & GPL v3            &
+GPL v3             & GPL v3          \\ \hline
+\textbf{Main Programming Language} & Ruby                & Ruby              &
+Ruby               & Python          \\ \hline
+\textbf{Framework version}         & Rails 3.2.2         & Rails 4.2.4       &
+Rails 3.2.3        & Django 2.2      \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Study Cases information}
+\label{table:studycases}
+\end{table}
+
+\subsubsection{Methodology}
+
+Ethnography is a research method designed to describe and analyze the social
+life and culture of a specific social system \cite{kennedy2013}. The central
+tenet of this approach is to understand values, beliefs, or ideas shared for a
+group under study from the members’ point of view. For this, the ethnographer
+needs to become a member of the group, observing in detail what people actually
+do and learning their language, social norms, rules, and artifacts.
+
+Ethnographic research is a qualitative methodology which requires the researcher
+to interpret the real world from the perspective of the informers in the
+investigation \cite{dobbert1982}. And  in software engineering context, it can
+strengthen investigations of social and human aspects in the software
+development process since the significance of these aspects of software practice
+is already well-established.
+
+In this work, we acquire data by using the ethnographic research method of
+participant observation and documentation analysis. The participant observation
+method makes it possible to explain and justify the meaning of the experiences
+through the experience of the observer and allow the informant to judge what is
+important rather than what he thinks is important. In addition to sensitivity,
+the observer needs to interpret what is happening in the community around him. 
+
+Software developers find it easier to reveal the processes present in their
+thoughts when communicating with other software developers, which makes this
+communication a valuable opportunity to observe the development process. This
+justifies why in this work, a method for data collection used was keep track of
+the various communication tools used to exchange information regarding certain
+project.
+
+\subsubsection{Contextualized Methodology}
+
+This study methodology has been fundamental in the context of this work. Through
+it, it has been possible to collect every needed data that has been later used
+to build the strategies/techniques. By observing and describing the entire
+process of implementing the DevOps culture in a legacy project, it was possible
+to obtain very relevant data that has been used to generate the DevOps
+strategies and their order of implementation. 
+
+There were four study cases conducted as shown in Table 1, each case had its our
+peculiarities which has allowed us to apply a different approach at every study.
+Each case study consisted in contributing to an open-source software community
+in terms of applying certain strategies to get the community to embrace the
+DevOps culture and practices.
+
+The first case was Noosfero, an open-source framework for social networking that
+has around fourteen years since its first commit, nearly two hundred and fifty
+thousand lines of code, twenty thousand commits and twenty-five contributors -
+the most legacy of all cases. The second case analyzed was Mapknitter, which is
+a project that is part of a huge ecosystem of services provided by the PublicLab
+community, it allows geographical data exporting and uploading, with around
+seventy-five contributors, sixty thousand lines of code and eleven years old.
+The third study case conducted was Spectral Workbench, which is also part of the
+PublicLab ecosystem, a web based application to collect, archive, share, and
+analyze spectral data. It has eighteen contributors, twelve hundred commits and
+around forty-six thousand of lines.
+
+In order to get a possible different point of view, the fourth case was
+conducted mainly by Victor Moura. It consisted in the project Salicml, that has
+around eighty-five thousand lines of code, fourteen contributors and over six
+hundred commits. Salicml is a web application that processed business indicators
+from cultural projects and presented them in a web dashboard.
+
+In each project, the study has lasted 5-6 months, including the one conducted by
+Victor Moura. The only exception to this has been the Noosfero case, in which
+the it has lasted around a year - as it is the bigger project in number of
+lines.
+
+As more studies have been conducted the pattern of strategies to be applied were
+becoming more and more clear. During every case, it was noticed that before
+starting any framework upgrade, it would be indispensable to cover the project
+of tests. However, to test it properly, it would also be fascinating to know
+which parts of the code I would be testing and how much of the project I would
+be testing, that is, in percentage. Also, a smart idea would be automating the
+entire test process since it increases the number of times exponentially one has
+to trigger the command to run the tests.
+
+All of this empirical work done in various legacy projects leads us to conclude
+that before adopting Continuous Integration, one should adopt Continuous Testing
+before it. The interesting part is that every strategy has been obtained through
+this, making the Case Study methodology very important for this work
+accomplishment.
+
+It is also worth mentioning that after the first case study conducted - Noosfero
+- there was already a solid set of practices to-become-strategies and their most
+adequate usage order. As there were more study cases, the strategies became more
+and more evident and their order.
+
+After the completion of every study case every information source was analyzed,
+as commits, issue reports, pull requests, informal communication tools and such.
+By analyzing that kind of resource it was possible building the set of
+practices, called Strategies in this paper. These resources also made possible
+gathering the posthumous lessons learned from the cases experiences, that would
+later become the foundation for this study.
+
+\section{Results}
+
+\vspace{5mm}
+
+\begin{table}[ht]
+\begin{adjustbox}{width={500px},totalheight={220px}}
+\begin{tabular}{|l|l|c|l|}
+\hline
+\textbf{Project} & \textbf{Repository Link} & \textbf{Description} &
+  \textbf{\begin{tabular}[c]{@{}l@{}}Technique Applied\\ (in order of
+  usage)\end{tabular}} \\ \hline
+\textbf{Noosfero} & https://gitlab.com/noosfero/noosfero/ &
+  \begin{tabular}[c]{@{}c@{}}An open-source framework \\ for social networking
+  with blogs, \\ e-Portfolios, CMS, RSS, thematic discussion,\\ events
+  scheduling, and more.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Continuous Integration,\\ Legacy in the
+  Box.\end{tabular} \\ \hline
+\textbf{Mapknitter} & https://github.com/publiclab/mapknitter/ &
+  \begin{tabular}[c]{@{}c@{}}A free and open-source software created \\ run by
+  Public Lab. \\ It lets people upload their own aerial \\ images in a web
+  interface over some existing\\  map data, share it, and export for
+  print.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Legacy in the Box,\\ Continuous Integration,\\
+  Microservices architecture,\\ Continuous Deploy.\end{tabular} \\ \hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Spectral \\ Workbench\end{tabular}} &
+  https://github.com/publiclab/spectral-workbench &
+  \begin{tabular}[c]{@{}c@{}}A web based application to collect, archive,\\
+  share, and analyze spectral data, \\ for Public Lab DIY spectrometers and\\
+  other spectrometers.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Continuous Integration,\\ Legacy in the Box,  \\
+  Continuous Testing, \\ Continuous Deploy, \\ Microservices
+  architecture.\end{tabular} \\ \hline
+\textbf{Salicml} & https://github.com/lappis-unb/salic-ml/ &
+  \begin{tabular}[c]{@{}c@{}}A web application that processed business \\
+  indicators from cultural projects and presented\\  them in a web dashboard to
+  optimize the \\ analysis of each project accountability by the \\ technical
+  team from the\\  Brazilian Ministry of Culture.\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}Continuous Integration, \\ Continuous Testing,\\
+  Continuous Deploy\end{tabular} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Strategies per study case}
+\label{table:strategies}
+\end{table}
+
+In Table \ref{table:strategies}, it is objectively pointed out which strategy
+and its order of usage to every case during the study. The following sections
+details more about each case.
+
+\subsection{Noosfero}
+
+\begin{table}[ht]
+\begin{adjustbox}{width={460px},totalheight={320px}}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Noosfero}} \\ \hline
+\textbf{} & \textbf{Before DevOps} & \textbf{After DevOps} \\ \hline
+\textbf{Docker/Docker Compose} & \begin{tabular}[c]{@{}l@{}}Misconfigured.
+Services were\\ properly split but with\\ several misconfigurations.\\ Not used
+in production.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Working properly for\\
+development and\\ production environments.\end{tabular} \\ \hline
+\textbf{Framework version} & \begin{tabular}[c]{@{}l@{}}Rails 4.2.4 with
+several\\ deprecated dependencies\\ and vendors. A lot of\\
+monkey-patches.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Updated to Rails
+5.1.6\\ with latest features.\end{tabular} \\ \hline
+\textbf{Continuous Integration} & \begin{tabular}[c]{@{}l@{}}GitLabCI builds
+took\\ too long to finish and\\ had important\\ pipelines missing.\end{tabular}
+& \begin{tabular}[c]{@{}l@{}}Implemented caching to\\ speed things up and\\
+added missing builds to\\ the pipeline executor.\end{tabular} \\ \hline
+\textbf{Continuous Deploy} & None. & None. \\ \hline
+\textbf{Coding stylesheet} & \begin{tabular}[c]{@{}l@{}}None. Every developer\\
+had its own technique.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Configured a
+stylesheet\\ and integrated it with\\ the CI pipelines, and\\ fixed all of the
+linting\\ errors.\end{tabular} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Noosfero Comparative: Before DevOps and After DevOps.}
+\label{table:noosfero}
+\end{table}
+
+Noosfero is a vast system, with over 70 database tables. Since there was a
+stable Continuous Integration tool set up and microservices have been widely
+made use of, there were only a couple of DevOps related improvements to do.
+
+During the Noosfero study, which has been done first, there was a limited
+implementation for containers and continuous integration. Since it was the first
+upgrade of this kind that it has been worked on, a few errors have resulted in
+valuable learnings. When the Rails framework upgrade started, it was noticed
+that some steps should have been taken before, which would make the upgrade less
+painful. 
+
+In the middle of the refactoring, the Continuous Integration pipeline could have
+been improved by adding other testing stages, which could have identified some
+issues that appeared later. For instance, by previously adding a stage that
+tested out the Docker image building, we could assure every time that we
+included a change, this part of the project could remain stable, we should have
+improved the pipeline before starting to fix the broken
+tests, what would've had provided a better visibility of next steps. Also by
+including a code quality and stylesheet compliance stage we could also assure
+that our code refactoring was changing the code for the better, by making it
+more maintainable for example. 
+
+The project was also not properly wrapped in a container image, which should
+have been done before the upgrade started. By wrapping up the monolith through
+the concept of Legacy in the box, there was a homogeneous environment for every
+developer to work with. That has provided a consistent environment for the
+Noosfero application. In a different approach, Docker containers ensure
+consistency across multiple development and release cycles, thus standardizing
+the Noosfero environment.
+
+Realistically, containerizing Noosfero before upgrading the Rails framework has
+been of great advantage; that meant parity,  meaning that the Noosfero images
+ran the same no matter which server or whose laptop they were running on. The
+Noosfero study case only involved me as developer for this task, even though the
+maintainers allowed me to freely experiment the strategies, as in Mapknitter,
+due to the project complexity and few resources, by the end of the study it was
+possible to apply only the Legacy in the Box and Continuous Integration
+strategies.
+
+It was also acknowledged that the Continuous Integration tool could be better
+used in terms of performance, so all of the testing and integration pipelines
+have been split to run in parallel since there was no inter-dependency between
+the suites. A style-sheet guide has also been added to this pipeline using
+Rubocop in order to enforce and obtain a more standardized code pattern.
+
+\subsection{Mapknitter}
+
+\begin{table}[ht]
+\begin{adjustbox}{width={460px},totalheight={320px}}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Mapknitter}} \\ \hline
+\textbf{} & \textbf{Before DevOps} & \textbf{After DevOps} \\ \hline
+\textbf{Docker/Docker Compose} & \begin{tabular}[c]{@{}l@{}}Misconfigured.
+Database and\\ services all wrapped in a \\ container. Only worked in \\
+production.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Working properly for \\
+development and\\ production environments.\end{tabular} \\ \hline
+\textbf{Framework version} & \begin{tabular}[c]{@{}l@{}}Deprecated Rails 3.2.2
+\\ with several deprecated \\ dependencies.\end{tabular} &
+\begin{tabular}[c]{@{}l@{}}Updated to Rails 5.2.3\\ with latest
+features.\end{tabular} \\ \hline
+\textbf{Continuous Integration} & \begin{tabular}[c]{@{}l@{}}Misconfigured
+TravisCI,\\ worked poorly.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Improved to
+cached\\ pipelines with reduced\\ timeouts with more\\ stages running in
+parallel.\end{tabular} \\ \hline
+\textbf{Continuous Deploy} & \begin{tabular}[c]{@{}l@{}}Misconfigured
+JenkinsCI,\\ didn’t work.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Improved
+build and startup\\ steps arrangement in order\\ to have it working the best\\
+way it could. Every\\ repository push would \\ trigger a build that could\\  be
+followed live.\end{tabular} \\ \hline
+\textbf{Coding stylesheet} & \begin{tabular}[c]{@{}l@{}}None. Despite the other
+Org \\ repositories had it configured.\end{tabular} &
+\begin{tabular}[c]{@{}l@{}}Configured a stylesheet\\ and integrated it with\\
+the CI pipelines, and\\ fixed all of the linting\\ errors. Thus, making the\\
+project following the org’s\\ coding patterns.\end{tabular} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Mapknitter Comparative: Before DevOps and After DevOps.}
+\label{table:mapknitter}
+\end{table}
+
+In Mapknitter the maintainers aimed to achieve a more compliant and stable
+project, with that, more newcomers are attracted to contribute with the
+open-source code.
+
+The Mapknitter case study was a very challenging project. It includes various
+sub-components; among them, there is the core application written in Rails and a
+Javascript interface. At first, Docker has provided several benefits to the
+Mapknitter project itself but mostly for the Rails framework upgrade. The time
+required to build the container was very low, and in short time we had a working
+developing environment. During the containerization process, we could notice
+that the Travis CI tool had been using the production environment. So it was
+necessary to split the development, test and production environments, which has
+been done. With a few more improvements, Travis had set parallel jobs - what
+caused the builds to run twice as fast.
+
+So by first adopting the concept of Legacy in the box, leads the update to take
+a further step and adopt the microservice architecture. That has been achieved
+at first, by splitting the MySQL database and the Mapknitter web app. Later we
+got also to containerize the ForeGo service, thus having three independent
+services running alongside.
+
+Later on the project, we also got to setup Rubocop linter and stylesheet, which
+following the same standards used in Plots2 project - other project part of the
+PublicLab community ecosystem. By doing this, now there was a more cohesive and
+uniform set of projects in the organization. Also this linting tool has been
+integrated with the continuous integration tool to keep track of the syntax
+changes.
+
+This refactoring involved two developers, me and another member of the
+community, the maintainers let us work very freely through the process, what has
+given us the chance to explore and try several ways of applying the strategies.
+And by the end of the Mapknitter study it was possible to apply a wide set of
+strategies, which were, in order: Legacy in the Box, Continuous Integration,
+Microservices architecture and Continuous Deploy.
+
+\subsection{Spectral Workbench}
+
+\begin{table}[ht]
+\begin{adjustbox}{width={460px},totalheight={320px}}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Spectral Workbench}} \\ \hline
+\textbf{} & \textbf{Before DevOps} & \textbf{After DevOps} \\ \hline
+\textbf{Docker/Docker Compose} & None & \begin{tabular}[c]{@{}l@{}}Working
+properly\\ for development \\and production\\ environments.\end{tabular}\\
+\hline
+\textbf{Framework version} & \begin{tabular}[c]{@{}l@{}}Rails 3.2.3 with
+several\\ deprecated dependencies\\ and vendors.\end{tabular} &
+\begin{tabular}[c]{@{}l@{}}Updated to Rails 5.2.4\\ with latest
+features.\end{tabular} \\ \hline
+\textbf{Continuous Integration} & \begin{tabular}[c]{@{}l@{}}Misconfigured
+TravisCI,\\ worked poorly.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Improved to
+cached\\ pipelines with reduced\\ timeouts with more\\ stages running in
+parallel.\end{tabular} \\ \hline
+\textbf{Continuous Deploy} & None. & \begin{tabular}[c]{@{}l@{}}Configured
+JenkinsCI\\ pipelines. Build and\\ startup steps arranged in\\ order to have it
+working\\ the best way it could.\\ Every repository push\\ would trigger a build
+that\\ could be followed live.\end{tabular} \\ \hline
+\textbf{Coding stylesheet} & None. & \begin{tabular}[c]{@{}l@{}}Configured a
+stylesheet\\ and integrated it with the\\ CI pipelines, and fixed\\ all of the
+linting errors.\end{tabular} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Spectral Workbench Comparative: Before DevOps and After DevOps.}
+\label{table:spectral}
+\end{table}
+
+With the previous experience acquired from the other study cases, there was
+already an implicit order of strategies to be applied. First the docker workflow
+of the project was rewritten, since it was an "old" repository - with legacy
+code and practices, it required some restructuring and refactoring on the
+configuration files. For instance, the MySQL instance was not dockerized and
+there was no automation that aided a developer to easily start coding. 
+
+The Continuous Integration tool needed to be configured to execute local builds,
+so that we could obtain a testing environment that simulated faithfully both the
+development and production environment. This same CI tool previously was
+configured to run all tests at once - what caused the builds to take valuable
+coding time. So I had to split the test running by groups, in a way that each
+test suite was executed separately, thus taking advantage of the parallelism
+provided by the tool.
+
+When it comes to testing, a main request of one of the maintainers was the
+configuration and inclusion of system tests and increase of the test coverage.
+Both of the requirements have been accomplished.
+
+After the Rails framework upgrade was complete, it was required a staging
+environment so that we could test out the changes that were made on the cloud, a
+staging environment. So along with the help of PublicLab’s sysadmin this was
+set, in an automated manner. And with Rubocop we got to standardize the coding
+style among the several contributors; the Rubocop settings used were the same as
+the ones used in Plots2, Mapknitter and Spectral Workbench.
+
+The Spectral Workbench study case only involved me as developer, the maintainers
+let me work very freely through the process, what gave me the chance to explore
+and try new strategies, besides the ones I had used in previous study cases, via
+Continuous Testing. And by the end of the study it was possible to apply the
+greater set of strategies of all study cases: Continuous Integration, Legacy in
+the Box,  Continuous Testing, Continuous Deploy, Microservices architecture.
+
+\subsection{Salicml}
+
+\begin{table}[hf]
+\begin{adjustbox}{width={460px},totalheight={305px}}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Salicml}} \\ \hline
+\textbf{Docker/Docker Compose} & None. & \begin{tabular}[c]{@{}l@{}}Working
+properly in\\ development and\\ production\\ environments.\\ Included a
+private\\ database proxy to\\ abstract VPN\\ connections to\\ developers.\\
+Multiple configurations\\ to reflect every existing\\ environment\end{tabular}
+\\ \hline
+\textbf{Framework version} & Django 2.2 & Django 2.2 \\ \hline
+\textbf{Continuous Integration} & None. & \begin{tabular}[c]{@{}l@{}}Configured
+Gitlab CI tool to\\ check on docker builds and\\ automated test running.\\
+Integrated CI tool with\\ docker containers\\ management.\end{tabular} \\ \hline
+\textbf{Continuous Deploy} & None. & \begin{tabular}[c]{@{}l@{}}Configured
+properly.\\ Totally automated by using\\ Rancher and Watchtower\\
+tools.\end{tabular} \\ \hline
+\textbf{Coding stylesheet} & None. & None. \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Salicml Comparative: Before DevOps and After DevOps.}
+\label{table:spectral}
+\end{table}
+
+Salic is an open source Brazilian governmental project, written in  PHP,
+monolithic, with no tests or technical documentation. The maintainers wanted to
+include a machine learning module in the  project. Since most machine learning
+libraries are written in python, we  containerize the legacy source code, and we
+build this new module as a microservice, already employing all DevOps good
+practices and automations. 
+
+In the Salicml study I have not worked directly in this project, so that I could
+obtain a third-party point of view regarding the DevOps strategies to apply and
+their respective order of application. This different approach was very useful,
+as it helped reasserting certain practices applied in the previous studies, and
+thus it was possible forming them into strategies.
+
+First it was included a docker development workflow for both development and
+production environments. A private database proxy to abstract VPN connections to
+developers was also included.
+
+Also, the main application image was built from another custom image. In
+practice, whenever a change was inserted into the codebase and it didn’t affect
+the application’s dependencies, the requirements docker image didn’t have to be
+rebuilt, thus optimizing the pipeline resources usage.
+
+This refactoring involved Victor Moura, the maintainers allowed him to work very
+freely through the process, what has given him the change to use a wide set of
+tools. And by the end of the Salicml study it was possible to apply a great
+range of strategies, which were, in order: Legacy in the Box, Continuous
+Integration, Microservices architecture and Continuous Deploy. The main focus of
+this study in question was containerizing the legacy software and assure
+evolvalibility of it through the implementation of the Microservices
+architecture.
+
+By the end of the Salicml study it was possible to apply a great range of
+strategies, which were, in order: Legacy in the Box, Continuous Integration,
+Microservices architecture and Continuous Deploy. The main focus of this study
+in question was containerizing the legacy software and assure evolvalibility of
+it through the implementation of the Microservices architecture.
+
+\section{Discussion}
+
+One of the most important things that could be extracted from those refactorings
+is that the order of the strategies to apply matters a lot. For instance, if you
+choose to implement Continuous Deploy in your legacy software before having
+Continuous Integration set up, you could be taking a lot of risks by pushing
+certain amount of untested code to the cloud, or even be wasting a lot of
+precious time by manually testing it first and then deploying.
+
+Considering another hypothetical case, one could choose to split the various
+components of the legacy software in several services - thus taking advantage of
+the Microservices architecture strategy - but it does that before implementing
+the Legacy in the Box technique. It may be very complicated to keep this
+architecture change flowing in a good pace without taking advantage of the
+various benefits that a legacy in box tool, such as Docker, could bring.
+Actually, making the refactoring way easier. In fact, it means that choosing the
+right order of strategies to be applied could prevent one from taking several
+extra hours, even days, of massive manual labor. 
+
+As the first strategy one should take to embrace DevOps in a legacy project is
+having a Continuous Integration pipeline set up. With that - along with a
+minimum test coverage - one can assure that the small pieces of code are still
+working, thus guaranteeing a more trustful code base. It is also noticeable that
+implementing CI strategy first will absorb the time a developer would take to
+run tests every time future integrations happened. 
+
+After having the work environment CI-friendly, the next step one should take is
+wrapping the legacy app in a container. Every configuration, third-party
+packages, and abstraction get to be explicitly defined in a container image,
+also being able to run anywhere basically.
+
+Continuous Deploy and Testing are desired strategies, especially when it comes
+to testing, but needing to deploy and test are not a bottleneck - until a
+certain point, of course, and this affirmation also depends on the size,
+developers, and business rules that this legacy software goes by. If one has the
+chance and time to keep continuously testing the legacy code and implement an
+integration to ship at every successful CI tool build, then those are convenient
+strategies to adopt.
+
+Moreover, implementing microservices is what one would call an utterly optional
+strategy because it takes a lot of time and effort to do it correctly. If it is
+not done right, you will only obtain a distributed monolith, with every said
+"micro" service executing heavy operations. Furthermore, once one has adopted
+the previous strategies, it is considerably less painful to implement it.
+
+Continuous Testing is by far the broadest strategy, meaning that almost every
+legacy should adopt it when embracing the DevOps practices; it holds great
+significance for organizations using DevOps for the regular deployment of
+software into production. Continuous Testing in DevOps essentially interweaves
+testing efforts into all stages of designing, developing, and deploying the
+software. When it is adequately implemented, an organization can get a constant
+insight into the robustness of the latest software build and ensure speedy
+delivery of high-quality software.
+
+When it comes to Continuous Integration, we can not say it is as "mandatory" as
+Continuous Testing. However, it certainly is beneficial, and, indeed, it will
+save a lot of the developers time. Of course, it could be painful at first for
+the team, and adapting a legacy software to such practices could be considerably
+expensive. Implementing a trustful CI pipeline could involve completely change a
+software development culture, adapt the organization and workflow, automate the
+testing bulk, and even provide certain infrastructure. Nevertheless, in the long
+term, the benefits are countless.
+
+By having each piece of code verified by an automated build, a team is allowed
+to develop cohesive software more rapidly. Leading to significantly reduced
+integration problems and quick error detection. The main goal of Continuous
+Integration is to provide rapid feedback so that if a \texit{bug} is introduced
+into the codebase, it can be identified and corrected as soon as possible.
+
+As in Continuous Integration, Continuous Deploy, when done right, is full of
+benefits, but implementing a trustful pipeline may be irksome as in CI. The
+technical parts are more comfortable than the organizational and cultural parts
+when it comes to legacy software. However, once this bottleneck is overcome, CD
+presents several benefits that directly influence the end product. Certainly,
+Continuous Deploy, when done right, is very fruitful - primarily when used along
+with Continuous Integration. Since failures are detected faster and fixed
+faster, it leads to higher release rates, making it possible to evaluate new
+code faster - and in smaller portions - thus allowing the developers to focus on
+the product features themselves.
+
+Containerization, or commonly legacy in the box, is by far the strategy that
+presents one of the most significant benefits of all strategies. It is the
+fastest and straightforward strategy to implement. It does not require special
+technical knowledge and gives support to the other strategies. It is a common
+misconception that using containers only makes sense if the app to be hosted is
+composed of microservices, but monolithic deployments can benefit from
+containers. Using a container provider for the legacy code immediately makes it
+easy to move the app from one host to another just by migrating the previously
+generated container image. Every developer is using the same container image -
+this means consistency. Several other benefits intrinsically appear with the
+mentioned aspects, such as scalability, bare-metal access to the hardware, easy
+distributing, and much.
+
+Two significant benefits are perceived by using containers as part of the Legacy
+in the Box strategy. First, resource utilization is much more efficient. Second,
+containers are cheap in man-hours to maintain and represent only a few costs a
+machine's resources. Container technology supports streamlined build, test, and
+deployment from the same container images; it enables Continuous Integration and
+Deploy. By using a container provider for the legacy code, one can immediately
+make it easy to move the app from one host to another just by migrating the
+previously generated container image.  
+
+Packaging the legacy code as a container, distributing it through an image
+repository is very facilitated. Anyone with access can pull the container image
+and run it. Every developer is using the same container image - this means
+consistency. 
+
+In legacy apps context, the meaning of the word containerization needs to be
+augmented to include all that is necessary to make an existing app ready to
+adopt Legacy in the Box concept. That is, to an extent that is well balanced
+with technical feasibility and expected business benefits. Choosing the right
+legacy containerization technique within this spectrum is a matter of striking
+the right balance between investment, business outcome, cost-effectiveness gain,
+technical feasibility, and risk appetite \cite{ibm2020}.
+
+While this practice delivers some benefits, it does not offer the full benefits
+of modular, container-based application architecture. Using containerization to
+the fullest involves refactoring the existing applications to adapt to the
+containers thoroughly. That could quickly scale out, thus providing better
+support for microservices architecture. Container technology supports
+streamlined build, test, and deployment from the same container images; it means
+better support for Continuous Integration and Deploy.
+
+At last, the Microservices strategy provides many advantages, but to the right
+contexts. One of the most significant advantages of a microservice over a
+monolithic architecture is that a microservice architecture allows different
+components to scale at different rates. The flexibility of microservices lets a
+system expand fast without requiring a significant increase in resources. 
+
+Also talking about the benefits of it, we have that, for instance, we know that
+every single microservice work independently and thus can be written with
+different technologies, and since all services are independent, developers are
+allowed to add, replace, and remove different services without influencing the
+already existent services. 
+
+Nevertheless, sometimes, using different languages, libraries, frameworks, and
+data storage technologies can be intimidating and paralyzing for organizations
+at first. They could become a "Frankenstein" of services that a long term. Plus,
+not every team can handle the autonomy, and independence microservices offer.
+Like any architectural approach, Microservices are hard to design correctly, and
+one should plan a lot before adopting this strategy.
+
+Finally, one should consider these techniques or strategies just the plain
+basics the would start permitting the evolution and maintainability of a legacy
+code with DevOps. That means continuously and safely update the legacy project's
+dependencies, keep refactoring the code so that its quality enhaces - by
+following the SOLID and Clean Code premisses, this refactoring should also get
+done in a way that leads to the componentization of the various parts of the
+code and when adding new features, assure that these are matching the current
+language standards.
+
+It is also important to mention that throughout this entire automation process
+the very own team of the legacy project qualifies in DevOps technologies, thus
+adapting the development (Dev) and operations (Ops) processes and premisses
+according to the DevOps culture.
+
+\section{Conclusion}
+
+There were four study cases conducted as shown in \ref{table:strategies}, each
+case had its our peculiarities which has allowed us to apply a different
+approach at every study. At every study it was possible to apply Continuous
+Integration. The Legacy in the Box technique was not only applied in Salicml,
+since the project already presented a stable container environment. When it
+comes to Continuous Deploy it was not just possible to apply in the Noosfero
+project and using Microservices was only achievable on Mapknitter and Spectral
+Workbench. By far the techniques that immediately presented benefits were
+Continuous Integration and Legacy in the Box, as of their easiness of execution.
+
+Every study case was a different sequence of strategies implementation, by
+registering every bottleneck and benefits perceived and based on the experiences
+acquired through the results achieved in this work, we found the following
+implementation sequence reduce the technical complexities of adopting DevOps:
+
+\begin{enumerate}
+\item Continuous Integration	
+\item Legacy in the Box
+\item Continuous Testing
+\item Continuous Deploy
+\item Microservices architecture
+\end{enumerate}
+
+
+The present work presented an experience report of DevOps adoption in
+\numberofprojects open source web projects. 
+
+We present a realistic analysis of the DevOps strategies that might help several
+teams aiming to modernize their legacy systems. It could give them guidance to
+consider the upcoming steps to take and provide an overview of the importance of
+certain things.
+
+Based on real-world experience, we set out the strategies, benefits, and
+countermeasures for each team with a specific condition or need. This work
+consisted of obtaining abstract information from previous experiences when
+upgrading legacy software. We have extracted data based on two of those
+experiences and mashed into the strategies that have been portrait in previous
+sections.
+
+Of course, the DevOps culture of practices presents several other practices and
+mindsets to make beneficial strategies. However, the strategies presented here
+were considered more relevant, and the ones that present the most impact in
+outdated legacy software.

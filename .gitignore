@@ -19,3 +19,7 @@
 *.brf
 *.toc
 *.idx
+*.ilg
+*.ind
+*.fls
+*.fdb_latexmk

@@ -1,9 +1,131 @@
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
+\chapter{Introduction and Motivation}
 
-Este documento apresenta considerações gerais e preliminares relacionadas 
-à redação de relatórios de Projeto de Graduação da Faculdade UnB Gama 
-(FGA). São abordados os diferentes aspectos sobre a estrutura do trabalho, 
-uso de programas de auxilio a edição, tiragem de cópias, encadernação, etc.
+\devops combines cultural philosophies, practices, and tools that increase an
+organization's ability to deliver applications and services at high velocity:
+evolving and improving products faster than organizations using traditional
+software development and infrastructure management processes. This speed enables
+organizations to serve their customers better and compete more effectively in
+the market \cite{amazon2020}.
 
-Este template é uma adaptação do ABNTeX2\footnote{\url{https://github.com/abntex/abntex2/}}.
+As more companies adopt \devops to improve their workflow and productivity, many
+challenges related to the infrastructure and the legacy software systems have
+arisen. \devops is about people and processes \cite{rocha2019}. It is a
+methodology that enables organizational groups to communicate with each other
+across silos and to coordinate their activities. Thus, it is not surprising that
+established cultural habits are the number one challenge to DevOps, especially
+barriers to cross-organizational collaboration, the critical element of
+successful DevOps practice \cite{saugatuck2014}. 
+
+Legacy codes are usually characterized by the following: use of outdated
+frameworks,  no test (neither unit nor integration), no containerization, no
+automation tools, nonexistence of technical documentation, monolithic
+architecture,  no continuous integration, no automation at all.
+
+The professionals working on a legacy system have to put in extra effort to
+refactor it, especially legacy systems. There are no strategies in place for
+implementation of refactoring techniques. No plans designed to guide the
+developers with the same. Developers performing with their own knowledge and
+sometimes ended up messing with the code \cite{khanam2018}.
+
+Outdated legacy applications usually work tied to running a production service
+that tends to be manual, repetitive, automatable, tactical, devoid of enduring
+value, and that scales linearly as a service grows \cite{google2016}. While
+cloud applications are needed for quick application delivery, some legacy
+systems cannot be integrated, leaving the IT infrastructure out of sync and
+incapable of operating at a fast pace \cite{vassit2018}. The solutions to such
+legacy challenges are often time-consuming, or costly \cite{vassit2018}. All
+this is stated still considering the web applications spectrum.
+
+
+Consistently, the core teams introduce new features to frameworks and
+languages. Most of the time, these changes result in performance gains and
+overall reliability in terms of security - but not limited to it. Embracing
+such performance and security gains could result in a faster app, which is very
+motivational to upgrade.
+
+Upgrading a particular app is not limited to the language or the framework
+itself. That is made very clear when we acknowledge that many projects have
+been widely taking advantage of container-based architectures tools, such as
+Docker, to make contributing easier. Grasping such DevOps aspects are helpful
+to such upgrades since it is a growing concept in Open Source Software
+projects.
+
+Evolvability is a vital software aspect, and fundamental to its existence. It
+motivates software engineering researches, and practices \cite{rajlich2018}.
+'Evolution consists of repeated software changes. Defined software change
+processes lead to improved productivity and quality of software evolution'
+\cite{rajlich2018}. 
+
+Microservices is an important architectural style that prioritizes evolvability.
+Evolvability is especially crucial for software with frequently changing
+requirements, internet-based systems for instance. Software professionals apply
+a set of numerous activities that we refer to as evolvability assurance
+\cite{bogner2019assuring}. These activities are usually of analytical nature to
+identify issues or a constructive nature to remediate issues. That includes
+techniques like code review or refactoring, standardization, guidelines,
+conscious technical debt management, and tools, metrics, or patterns
+\cite{bogner2019assuring}.
+
+Thus, in the appropriate context, migrating monolithic architectures to
+microservices could bring in many benefits including, but not limited to,
+flexibility to adapt to the technological changes in order to avoid technology
+lock-in, and more importantly, reduced time-to-market \cite{jamshid2016}.
+
+Legacy apps are typically harder to adopt DevOps due to a blend of technology,
+process and cultural issues. The cultural issue regard to the initial resistance
+from teams to move into DevOps ways is due to reluctance to change, emerging
+from an inertia of doing things a certain way for years if not decades. Most of
+these systems were not built for the agile workflows that focus on incremental
+and iterative deliveries. Amidst challenges like too much technical debt,
+tightly integrated hardware components, fragile codebase, it is tough to select
+specialised approach like DevOps.
+
+ While designing and developing a greenfield project, architects and developers
+ start afresh and have the opportunity to take into consideration the
+ requirements of DevOps  \cite{infosys2018}.  In case of legacy systems, which
+ have evolved over a period of time without any consideration of automation, the
+ adoption of the DevOps approach may result in large-scale refactoring or
+ redesign. It may prove to be a significant challenge to automate the vast
+ amount of legacy code and processes \cite{infosys2018}.
+ 
+ Considering tests and their automation, Legacy systems tend to have low code
+ coverage due to few or no unit tests. Testing is typically done in higher
+ environments and is manual. As more features are added to a legacy system, the
+ manual testing effort increases drastically, eventually slowing down feature
+ delivery. This problem is amplified when there are multiple teams working on
+ the same code base \cite{infosys2018}.
+
+Microservices is also observed as a growing concept \cite{jamshid2016}. Although
+\devops practices can also be used for monolith architecture, using them in the
+context of microservices enables practical implementation of DevOps
+\cite{jamshid2016}.
+
+In the context of an upgrade, microservices are strongly recommended because they
+bring up some desired advantages that can be very useful to certain context.
+Although we have a set of favorable concepts and tools at our disposal, there is
+still no standardized collection of steps to be followed; in other words, it has
+no pattern defined when upgrading software. Actually, it seems to be an
+empirical-like process.
+
+This could represent a considerable challenge to teams when performing an
+upgrade, because since there is very-well defined tools and appropriate
+concepts, one could think that embracing any of those tools and concepts will
+result in a successful, or even a painless upgrade process.
+
+The challenge is identifying which tool and concept are adequate to the context.
+As in any software process improvement initiative, the path to a successful
+DevOps implementation is unique to each organization. Still, it is possible to
+learn from challenges experienced during other process adoptions in order to
+plan future initiatives \cite{porres2015}.
+
+In this work,  we report the results of a study case with the adoption of
+\numberofprojects legacy open-source web projects into \devops to understand
+which refactoring techniques and strategies influence developers' decisions. We
+map the refactoring techniques used, the sequence they were employed, the
+benefits perceived by the organization,  and the challenges faced by developers
+when deploying each refactoring technique. We analyse the project repositories,
+the commits, the issues discussions, the communication channels. We present a
+set of lessons learned, with the \devops benefits for each refactoring technique
+experimented, the impact of the order the techniques are employed from
+developers perspective and some guidelines for legacy projects aiming at
+adopting \devops. 
